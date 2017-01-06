@@ -1,0 +1,15 @@
+﻿@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:100,400|Dancing+Script');
+
+//Font awsome
+@import "fonts/link/font-awesome.scss";
+
+//core
+@import "core/reset.scss";
+@import "core/config.scss";
+@import "core/grid.scss";
+
+//components
+@import "components/megamenu.scss";
+
+@import "responsive.scss";
