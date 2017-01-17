@@ -1,0 +1,37 @@
+//Container Grid
+.clearfix:after,.clearfix:before,.container:after,.container:before,.row:after,.row:before{clear:both;display: table;content: "";}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+  @media (min-width: $screen-sm) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg) {
+    width: $container-lg;
+  }
+}
+
+//Columns
+$initial-col:1;
+$total-col:12;
+[class^="col-"] {
+    float:left;
+    padding-right:1em;
+    padding-left:1em;
+}
+@for $i from $initial-col through $total-col {
+    .col-#{$i} {
+            width: (100/12)* $i *1%;
+    }
+}
+
+//row
+.row{
+    margin-right:-1em;
+    margin-left:-1em;
+}

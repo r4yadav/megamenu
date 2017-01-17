@@ -1,0 +1,67 @@
+@import "utility.scss";
+.navigation{
+    //Nav Style
+    @include resetnav;
+    a{
+        @include initanchor;
+    }
+    > ul{
+       > li{
+           > .submenuWrap{
+               @include levelonewrap;
+           }
+           > a{
+                @include setleveloneanchor;
+            }
+            &:hover{
+                > a{
+                    @include setleveloneanchorhover;
+                }
+            }
+        }
+    }
+    .submenuWrap{
+        @include setmenuwrap;
+        .btn{
+            @include btn;
+        }
+        ul{
+            width:100%;
+            float:left;
+            margin-bottom: 1em;
+            li{
+                clear: both;
+                margin-bottom:0.5em;
+                > a{font-weight:$normal-weight;}
+            }
+        }
+        //people browse
+        .peopBrow{
+            ul{
+                li{
+                    clear:none;
+                    margin-bottom:0;
+                        a{
+                            &:hover{
+                                background-color:$blue;
+                                color:$white;
+                            }
+                        }
+                    }
+            }
+        }
+
+    }
+
+    //Nav Function
+    li:hover > .submenuWrap{
+        visibility: visible;
+        opacity:1;
+
+    } 
+    //Type horizontal menu
+    /*.typeHorizontal{
+        li{width:100%;}
+    }*/
+
+}
