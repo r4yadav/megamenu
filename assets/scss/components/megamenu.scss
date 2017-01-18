@@ -8,9 +8,11 @@
     > ul{
         
        > li{
+           @include navindicator;
            border-bottom:1px solid $white;
            width:100%;
            float:left;
+
             @media (min-width: $screen-md) {
                 width:auto;
                 border-bottom:none;
@@ -34,8 +36,6 @@
             @include btn;
         }
         ul{
-            width:100%;
-            float:left;
             margin-bottom: 1em;
             li{
                 margin-bottom:0.5em;

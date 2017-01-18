@@ -33,10 +33,9 @@ $(document).ready(function(){
             var windowWidth = parseInt( $(window).width());
             if(windowWidth < 992){
                 $(this).parent().find(".submenuWrap").slideToggle();
+                $(this).parent().toggleClass("active");
+                $(this).parent().siblings().removeClass("active");
                 $(this).parent().siblings().find(".submenuWrap").slideUp();
-            }
-            else{
-
             }
         })
     //mobiile menu ends

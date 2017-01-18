@@ -210,3 +210,28 @@
         .select ul li:hover, .select ul li.selected{color:#fff; background:$blue; cursor:pointer;}
         .main{ position: relative;margin-bottom: 15px;}
 }
+
+@mixin font-icon($value){
+        content:$value;
+        position: absolute;
+        right: 8%;
+        font-size: 26px;
+        line-height: normal;
+        top: 19%;
+        
+}
+
+@mixin navindicator(){
+    > a:before{
+        @media (max-width: $screen-sm-max) {
+            @include font-icon("\002B");
+        }
+     }
+     &.active{
+        > a:before{
+            @media (max-width: $screen-sm-max) {
+                @include font-icon("\002D");
+            }
+        }
+     }
+}

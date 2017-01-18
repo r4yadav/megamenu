@@ -4,8 +4,8 @@
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("/assets/scss/fonts/fontawesome-webfont.eot?v=4.7.0");
-  src: url("/assets/scss/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("/assets/scss/fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("/assets/scss/fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("/assets/scss/fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("/assets/scss/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+  src: url("assets/scss/fonts/fontawesome-webfont.eot?v=4.7.0");
+  src: url("assets/scss/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("assets/scss/fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("assets/scss/fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("assets/scss/fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("assets/scss/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 .fa {
@@ -2658,6 +2658,22 @@ body {
     border-bottom: 1px solid #fff;
     width: 100%;
     float: left; }
+    @media (max-width: 991px) {
+      .navigation > ul > li > a:before {
+        content: "+";
+        position: absolute;
+        right: 8%;
+        font-size: 26px;
+        line-height: normal;
+        top: 19%; } }
+    @media (max-width: 991px) {
+      .navigation > ul > li.active > a:before {
+        content: "-";
+        position: absolute;
+        right: 8%;
+        font-size: 26px;
+        line-height: normal;
+        top: 19%; } }
     @media (min-width: 992px) {
       .navigation > ul > li {
         width: auto;
@@ -2755,8 +2771,6 @@ body {
         color: #fff;
         border-color: #dc6b0e; }
     .navigation .submenuWrap ul {
-      width: 100%;
-      float: left;
       margin-bottom: 1em; }
       .navigation .submenuWrap ul li {
         margin-bottom: 0.5em; }
