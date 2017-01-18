@@ -2368,6 +2368,9 @@ body {
   float: left;
   padding-right: 1em;
   padding-left: 1em; }
+  @media (max-width: 991px) {
+    [class^="col-"] {
+      width: 100% !important; } }
 
 .col-1 {
   width: 8.33333%; }
@@ -2410,8 +2413,7 @@ body {
   margin-left: -1em; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
-  color: #444444; }
+  font-weight: normal; }
 
 h2, h3, h4, h5, h6 {
   margin: 0 0 0.5em; }
@@ -2442,16 +2444,16 @@ h6 {
 .pull-left {
   float: left; }
 
-.bordered-right {
-  background: url("../images/sep.jpg") top right no-repeat; }
+@media (min-width: 992px) {
+  .bordered-right {
+    background: url("../images/sep.jpg") top right no-repeat; }
 
-.bordered-left {
-  border-left: 1px solid #f2f2f2; }
+  .bordered-left {
+    border-left: 1px solid #f2f2f2; }
 
-.bordered-bottom {
-  border-bottom: 1px solid #f2f2f2;
-  padding-bottom: 0.5em; }
-
+  .bordered-bottom {
+    border-bottom: 1px solid #f2f2f2;
+    padding-bottom: 0.5em; } }
 .text-center {
   text-align: center; }
 
@@ -2461,8 +2463,10 @@ h6 {
 .text-left {
   text-align: center; }
 
-#header {
-  position: relative; }
+body {
+  position: relative;
+  overflow-x: hidden;
+  right: 0; }
 
 .peopBrow h3 {
   margin-bottom: 30px; }
@@ -2483,13 +2487,58 @@ h6 {
   left: -10px;
   opacity: 0; }
 
+.hamburger {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  float: right;
+  width: 30px;
+  border: 1px solid #666666;
+  border-radius: 5px;
+  padding: 20px 8px;
+  cursor: pointer; }
+  @media (min-width: 992px) {
+    .hamburger {
+      display: none; } }
+  .hamburger span {
+    height: 2px;
+    width: 96%;
+    background-color: #666666;
+    display: block;
+    position: relative;
+    text-align: center; }
+    .hamburger span:before, .hamburger span:after {
+      content: "";
+      display: block;
+      background-color: #666666;
+      position: absolute;
+      height: 2px;
+      width: 100%; }
+    .hamburger span:before {
+      top: -8px; }
+    .hamburger span:after {
+      bottom: -8px; }
+
+@media (max-width: 991px) {
+  .sm-hide {
+    display: none; } }
+@media (min-width: 992px) {
+  #header {
+    position: relative; } }
 .navigation {
+  position: absolute;
+  top: 0;
+  height: auto;
+  min-height: 100%;
+  background: #17467a;
+  color: #fff;
   width: 100%;
+  max-width: 245px;
+  right: -245px;
   box-sizing: border-box;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.33333;
-  color: #666666;
   /*.typeHorizontal{
       li{width:100%;}
   }*/ }
@@ -2497,6 +2546,8 @@ h6 {
     box-sizing: border-box; }
   .navigation form {
     display: block; }
+  .navigation input[type="submit"], .navigation button {
+    cursor: pointer; }
   .navigation input, .navigation textarea {
     border: #e1e1e1 solid 1px;
     background-color: #fff;
@@ -2565,70 +2616,115 @@ h6 {
     background: #17467a;
     cursor: pointer; }
   .navigation .main {
-    position: relative; }
-  .navigation li:hover > a {
-    color: #dc6b0e; }
+    position: relative;
+    margin-bottom: 15px; }
   .navigation li {
     list-style: none;
-    float: left; }
+    float: left;
+    width: 100%; }
+    @media (min-width: 992px) {
+      .navigation li {
+        width: auto; } }
     .navigation li a {
       text-decoration: none; }
   .navigation p {
     margin-bottom: 15px; }
+  @media (min-width: 480px) {
+    .navigation {
+      max-width: 350px;
+      right: -350px; } }
+  @media (min-width: 768px) {
+    .navigation {
+      max-width: 400px;
+      right: -400px; } }
+  @media (min-width: 992px) {
+    .navigation {
+      max-width: 100%;
+      width: auto;
+      position: static;
+      background-color: #fff;
+      color: #666666;
+      display: block; }
+      .navigation li:hover > a {
+        color: #dc6b0e; }
+      .navigation h1, .navigation h2, .navigation h3, .navigation h4, .navigation h5, .navigation h6 {
+        color: #444444; } }
   .navigation a {
-    color: #222222; }
+    color: #fff; }
+    @media (min-width: 992px) {
+      .navigation a {
+        color: #222222; } }
     .navigation a:hover, .navigation a:active, .navigation a:focus {
       color: #dc6b0e; }
-  .navigation > ul > li > .submenuWrap {
-    width: 100%;
-    position: absolute;
-    top: 165px;
-    left: 0;
-    z-index: 1000;
-    padding-top: 30px;
-    min-height: 200px;
-    box-shadow: 0px 6px 6px #e1e1e1;
-    -moz-box-shadow: 0px 6px 6px #e1e1e1;
-    -webkit-box-shadow: 0px 6px 6px #e1e1e1;
-    border-top: 4px solid #17467a;
-    background-color: #fff;
-    padding-bottom: 50px;
-    margin-bottom: 2em; }
-  .navigation > ul > li > a {
-    display: block;
-    padding: 0.75em 2em;
-    border-top: 2px solid transparent;
-    position: relative;
-    font-size: 18px;
-    font-weight: 700; }
-    .navigation > ul > li > a:before {
-      content: "";
-      border-bottom: 10px solid #17467a;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      visibility: hidden;
-      position: absolute;
-      right: 50%;
-      bottom: -5px;
-      -moz-transition: all 0.1s ease;
-      -webkit-transition: all 0.1s ease;
-      transition: all 0.1s ease; }
-  .navigation > ul > li:hover > a {
-    color: #dc6b0e;
-    border-color: #17467a; }
-    .navigation > ul > li:hover > a:before {
-      visibility: visible;
-      bottom: 0; }
+  .navigation > ul > li {
+    border-bottom: 1px solid #fff; }
+    @media (min-width: 992px) {
+      .navigation > ul > li {
+        border-bottom: none; } }
+    .navigation > ul > li > .submenuWrap {
+      border-top: 1px solid #fff;
+      padding-top: 20px; }
+      @media (min-width: 992px) {
+        .navigation > ul > li > .submenuWrap {
+          width: 100%;
+          position: absolute;
+          top: 165px;
+          left: 0;
+          z-index: 1000;
+          padding-top: 30px;
+          min-height: 200px;
+          border-top: none;
+          box-shadow: 0px 6px 6px #e1e1e1;
+          -moz-box-shadow: 0px 6px 6px #e1e1e1;
+          -webkit-box-shadow: 0px 6px 6px #e1e1e1;
+          border-top: 4px solid #17467a;
+          background-color: #fff;
+          padding-bottom: 50px;
+          margin-bottom: 2em; } }
+    .navigation > ul > li > a {
+      display: block;
+      padding: 0.70em;
+      font-size: 18px;
+      position: relative; }
+      @media (min-width: 992px) {
+        .navigation > ul > li > a {
+          font-weight: 700;
+          padding: 0.75em 2em;
+          border-top: 2px solid transparent; }
+          .navigation > ul > li > a:before {
+            content: "";
+            border-bottom: 10px solid #17467a;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            visibility: hidden;
+            position: absolute;
+            right: 50%;
+            bottom: -5px;
+            -moz-transition: all 0.1s ease;
+            -webkit-transition: all 0.1s ease;
+            transition: all 0.1s ease; } }
+    .navigation > ul > li:hover > a {
+      color: #dc6b0e; }
+      .navigation > ul > li:hover > a:before {
+        visibility: visible;
+        bottom: 0; }
+      @media (min-width: 992px) {
+        .navigation > ul > li:hover > a {
+          border-color: #17467a; } }
   .navigation .submenuWrap {
-    opacity: 0;
-    visibility: hidden;
     -moz-transition: opacity 0.3s linear;
     -webkit-transition: opacity 0.3s linear;
-    transition: opacity 0.3s linear; }
-    .navigation .submenuWrap a {
-      color: #17467a; }
-      .navigation .submenuWrap a:hover {
-        color: #dc6b0e; }
+    transition: opacity 0.3s linear;
+    display: none; }
+    @media (min-width: 992px) {
+      .navigation .submenuWrap {
+        display: block;
+        visibility: hidden;
+        opacity: 0; }
+        .navigation .submenuWrap a {
+          color: #17467a; }
+          .navigation .submenuWrap a:hover {
+            color: #dc6b0e; } }
     .navigation .submenuWrap .btn {
       font-size: 14px;
       text-transform: uppercase;
@@ -2665,15 +2761,18 @@ h6 {
         clear: both;
         margin-bottom: 0.5em; }
         .navigation .submenuWrap ul li > a {
+          display: block;
           font-weight: 400; }
     .navigation .submenuWrap .peopBrow ul li {
       clear: none;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      width: auto; }
       .navigation .submenuWrap .peopBrow ul li a:hover {
         background-color: #17467a;
         color: #fff; }
-  .navigation li:hover > .submenuWrap {
-    visibility: visible;
-    opacity: 1; }
+  @media (min-width: 992px) {
+    .navigation li:hover > .submenuWrap {
+      visibility: visible;
+      opacity: 1; } }
 
 /*# sourceMappingURL=main.css.map */

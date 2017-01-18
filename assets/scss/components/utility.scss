@@ -1,4 +1,4 @@
-h1,h2,h3,h4,h5,h6{font-weight:normal;color:$gray;}
+h1,h2,h3,h4,h5,h6{font-weight:normal;}
 h2,h3,h4,h5,h6{margin: 0 0 0.5em;}
 h1{font-size:$font-size-h1}
 h2{font-size:$font-size-h2}
@@ -10,15 +10,17 @@ h6{font-size:$font-size-h6}
 //Global
 .pull-right{float:right;}
 .pull-left{float:left;}
-.bordered-right{background:url("../images/sep.jpg")top right no-repeat;}
-.bordered-left{border-left:1px solid $gray-lightest;}
-.bordered-bottom{border-bottom:1px solid $gray-lightest;padding-bottom:0.5em;}
+@media (min-width: $screen-md) {
+    .bordered-right{background:url("../images/sep.jpg")top right no-repeat;}
+    .bordered-left{border-left:1px solid $gray-lightest;}
+    .bordered-bottom{border-bottom:1px solid $gray-lightest;padding-bottom:0.5em;}
+}
 .text-center{text-align:center;}
 .text-right{text-align:center;}
 .text-left{text-align:center;}
 
 //header css
-#header{position: relative;}
+body{position: relative;overflow-x: hidden;right:0;}
 
 //people browse
 .peopBrow{
@@ -49,4 +51,50 @@ $lastanimate:10;
     .animate-#{$i} {
         
     }
+}
+
+
+
+//Mobile menu
+.hamburger{
+    @media (min-width: $screen-md) {
+        display: none;
+    }
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    float: right;
+    width: 30px;
+    border: 1px solid $gray-light;
+    border-radius: 5px;
+    padding: 20px 8px;
+    cursor: pointer;
+    span{
+        height:2px;
+        width:96%;
+        background-color:$gray-light;
+        display: block;
+        position: relative;
+        text-align: center;
+        &:before,&:after{
+            content:"";
+            display: block;
+            background-color:$gray-light;
+            position: absolute;
+            height:2px;
+            width:100%;
+        }
+        &:before{
+            top: -8px;}
+        &:after{
+            bottom: -8px;}
+     }
+}
+
+@media (max-width: $screen-sm-max) {
+  .sm-hide{display: none;}
+}
+
+ @media (min-width: $screen-md) {
+    #header{position: relative;}
 }

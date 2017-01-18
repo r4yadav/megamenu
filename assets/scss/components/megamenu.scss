@@ -6,7 +6,12 @@
         @include initanchor;
     }
     > ul{
+        
        > li{
+           border-bottom:1px solid $white;
+             @media (min-width: $screen-md) {
+                border-bottom:none;
+             }
            > .submenuWrap{
                @include levelonewrap;
            }
@@ -32,7 +37,10 @@
             li{
                 clear: both;
                 margin-bottom:0.5em;
-                > a{font-weight:$normal-weight;}
+                > a{
+                    display: block;
+                    font-weight:$normal-weight;
+                }
             }
         }
         //people browse
@@ -41,6 +49,7 @@
                 li{
                     clear:none;
                     margin-bottom:0;
+                    width:auto;
                         a{
                             &:hover{
                                 background-color:$blue;
@@ -48,17 +57,19 @@
                             }
                         }
                     }
-            }
+                }
         }
 
     }
 
     //Nav Function
-    li:hover > .submenuWrap{
-        visibility: visible;
-        opacity:1;
+    @media (min-width: $screen-md) {
+        li:hover > .submenuWrap{
+            visibility: visible;
+            opacity:1;
 
-    } 
+        } 
+    }
     //Type horizontal menu
     /*.typeHorizontal{
         li{width:100%;}

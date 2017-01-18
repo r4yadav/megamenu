@@ -23,6 +23,9 @@ $total-col:12;
     float:left;
     padding-right:1em;
     padding-left:1em;
+    @media (max-width: $screen-sm-max){
+      width:100%!important;
+    }
 }
 @for $i from $initial-col through $total-col {
     .col-#{$i} {

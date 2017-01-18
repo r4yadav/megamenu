@@ -14,6 +14,7 @@
     <![endif]-->
     <script src="./assets/js/jquery.js"></script>
     <script src="./assets/js/edyCustomSelectBox-1.3.min.js"></script>
+    <script src="./assets/js/utility.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $('.csel').edyCustomSelectBox();
@@ -25,13 +26,16 @@
     <header id="header">
         <div class="container">
             <h1 class="logo"><img src="./assets/images/logo.png" alt="logo" /></h1>
+            <div class="hamburger">
+                <span></span>
+            </div>
             <nav class="navigation pull-right">
                 <ul>
                     <li><a href="#">Link1</a>
                         <div class="submenuWrap">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-3 bordered-right">
+                                    <div class="col-3 bordered-right sm-hide">
                                         <section class="animate">
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lobortis
                                                 ac purus ut placerat. Donec mattis feugiat nulla, eu efficitur augue. Fusce
@@ -50,9 +54,9 @@
                                             <h3><a href="#">Contant us</a></h3>
                                         </section>
                                     </div>
-                                    <div class="col-2 bordered-right">
+                                    <div class="col-2 bordered-right sm-hide">
                                         <section class="animate">
-                                            <h3 class="text-center"><a href="#">Overview</a></h3>
+                                            <h3 class="text-center"><a href="#">Awards</a></h3>
                                             <figure><img src="assets/images/award.png" alt="awards" /></figure>
                                         </section>
                                     </div>
@@ -374,7 +378,7 @@
                                             <div class="col-12">
                                                  <h3><a href="#">Newsletter</a></h3>
                                                  <p>The blog features a wide array of original content, covering key areas of labor and employment law affecting the employer community.</p>
-                                                 <div class="row">
+                                                 <div class="row sm-hide">
                                                      <div class="col-5">
                                                          <input type="text" placeholder="email@Domain.com" />
                                                      </div>
