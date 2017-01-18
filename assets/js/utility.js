@@ -44,7 +44,7 @@ $(document).ready(function(){
 
 $(window).resize(function(){
    var windowWidth = parseInt( $(window).width());
-        if(windowWidth < "992"){
+        if(windowWidth < 992){
             resetopennav();
         }else{
             $( "body" ).css({"right":0});

@@ -14,11 +14,7 @@
     font-family: $font-family-sans-serif;
     font-size: $font-size-base;
     line-height: $line-height-large;
-    li{list-style: none;float:left;
-        width:100%;
-        @media (min-width: $screen-md) {
-            width:auto;
-        }
+    li{list-style: none;
         a{text-decoration: none;}
     }
     p{
@@ -43,6 +39,11 @@
             color:$anchor-hover-color;
         }
         h1,h2,h3,h4,h5,h6{color:$gray;}
+    }
+    @media (max-width: $screen-sm-max) {
+        .container{
+            width:100%;
+        }
     }
 }
 

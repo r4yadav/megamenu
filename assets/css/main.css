@@ -2619,12 +2619,7 @@ body {
     position: relative;
     margin-bottom: 15px; }
   .navigation li {
-    list-style: none;
-    float: left;
-    width: 100%; }
-    @media (min-width: 992px) {
-      .navigation li {
-        width: auto; } }
+    list-style: none; }
     .navigation li a {
       text-decoration: none; }
   .navigation p {
@@ -2649,6 +2644,9 @@ body {
         color: #dc6b0e; }
       .navigation h1, .navigation h2, .navigation h3, .navigation h4, .navigation h5, .navigation h6 {
         color: #444444; } }
+  @media (max-width: 991px) {
+    .navigation .container {
+      width: 100%; } }
   .navigation a {
     color: #fff; }
     @media (min-width: 992px) {
@@ -2657,9 +2655,12 @@ body {
     .navigation a:hover, .navigation a:active, .navigation a:focus {
       color: #dc6b0e; }
   .navigation > ul > li {
-    border-bottom: 1px solid #fff; }
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    float: left; }
     @media (min-width: 992px) {
       .navigation > ul > li {
+        width: auto;
         border-bottom: none; } }
     .navigation > ul > li > .submenuWrap {
       border-top: 1px solid #fff;
@@ -2758,13 +2759,12 @@ body {
       float: left;
       margin-bottom: 1em; }
       .navigation .submenuWrap ul li {
-        clear: both;
         margin-bottom: 0.5em; }
         .navigation .submenuWrap ul li > a {
           display: block;
           font-weight: 400; }
     .navigation .submenuWrap .peopBrow ul li {
-      clear: none;
+      float: left;
       margin-bottom: 0;
       width: auto; }
       .navigation .submenuWrap .peopBrow ul li a:hover {
