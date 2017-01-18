@@ -2623,7 +2623,7 @@ body {
     .navigation li a {
       text-decoration: none; }
   .navigation p {
-    margin-bottom: 15px; }
+    margin-bottom: 7px; }
   @media (min-width: 480px) {
     .navigation {
       max-width: 350px;
